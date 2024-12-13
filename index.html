@@ -1,37 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="imagex/png" href="https://cdn.icon-icons.com/icons2/26/PNG/256/animal_monkey_monkeys_audio_2590.png">
+        <title>Meida Query</title>
 
-    <script>
+        <style>
 
-        let turma = {
-            curso: 'TDS',
-            ano: '2',
-            estudantes: [
-                'Lui',
-                'Rebeca',
-                'Sergio',
-                'Izabella'
-            ]
-        }
+            body {
+                background-color: chartreuse;
+            }
 
-        let turmaString = JSON.stringify(turma)
+            h1 {
+                font-size: 40px;
+            }
 
-        // localStorage.setItem('chave', 'valor')
-        // localStorage.setItem('outraChave', 'outroValor')
-        localStorage.setItem('turma', JSON.stringify(turma))
-        let turma2 = localStorage.getItem('turma')
-        turma2 = JSON.parset(turma2)
+            .img img{
+                max-width: 100%;
+            }
 
+            .img-pequena {
+                display: none;
+            }
 
-        console.log(JSON.parset(turma2))
+            /* nao necessariamente precisamos do screen dps do media */
 
-    </script>
-    
-</body>
+            @media screen and (max-width:500px){
+                body {
+                    background-color: red;
+                    color: #fff;
+                }
+
+                h1 {
+                    font-size: 50px;
+                }
+
+                .img-pequena {
+                    display: block;
+                }
+
+                .img-grande {
+                    display: none;
+                }
+            }
+
+            @media screen and (min-width:768px) and (max-width:1023px){
+                body {
+                    background-color: red;
+                    color: #fff;
+                }
+
+                h1 {
+                    font-size: 50px;
+                }
+            }
+
+            @media screen and (min-width:1024px){
+                body {
+                    background-color: blueviolet;
+                    color: rgb(11, 204, 92);
+                }
+
+                h1 {
+                    font-size: 34px;
+                }
+            }
+
+            @media screen and (max-width:767px){
+                body {
+                    background-color: darkkhaki;
+                    color: dodgerblue;
+                }
+
+                h1 {
+                    font-size: 70px;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        
+        <h1>Media Queries</h1>
+
+        <div class="img img-grande">
+            <img src="https://placehold.co/1000x400" alt="sal">
+        </div>
+        
+        <div class="img img-pequena">
+            <img src="https://placehold.co/500x400" alt="acuca">
+        </div>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, similique soluta. Accusantium, ea unde? Necessitatibus tempore labore architecto velit nemo. Distinctio iusto nam cum odit vero optio non accusamus aut ipsam voluptatem debitis accusantium fugiat, sed sequi labore. Aliquid illo laborum porro nostrum corporis voluptates, eaque voluptas harum nam laboriosam?</p>
+
+    </body>
 </html>
