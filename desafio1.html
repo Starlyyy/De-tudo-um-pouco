@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            height: 90vh;
+            justify-content: center;
+        }
+
+        .tema-escuro {
+            background-color: rgb(42, 42, 42);
+            color: white;
+        }
+
+        .tema-claro {
+            background-color: #fff;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        
+        <input type="text" placeholder="Digite seu nome aqui..">
+        <button id="font">Tamanho da fonte</button>
+        <button id="tema">Tema da página</button>
+
+    </div>
+    
+
+    <script>
+
+        const botaoTema = document.getElementById('tema')
+        botaoTema.addEventListener('click', ()=>{
+
+            if (document.body.classList.contains('tema-escuro')) {
+                
+                document.body.classList.add('tema-claro')
+                document.body.classList.remove('tema-escuro')
+                localStorage.setItem('tema', 'tema-claro')
+
+            } else {
+
+                document.body.classList.add('tema-escuro')
+                document.body.classList.remove('tema-claro')
+                localStorage.setItem('tema', 'tema-escuro')
+
+            }
+
+        })
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const tema = localStorage.getItem('tema')
+            document.body.classList.add(tema)
+        })
+
+    </script>
+
+</body>
+</html>
